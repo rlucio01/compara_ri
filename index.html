@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativo Regulamento Interno - Life 360° Residences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-secondary: #141937;
+            --bg-card: #1a1f3a;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-amber: #f59e0b;
+            --accent-green: #10b981;
+            --border: #2d3748;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 32px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .header-info h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(24px, 5vw, 32px);
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .header-info p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 12px;
+            background: var(--bg-card);
+            padding: 6px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-btn.active {
+            background: var(--accent-blue);
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-blue);
+        }
+
+        /* Search */
+        .search-section {
+            margin: 48px 0;
+        }
+
+        .search-wrapper {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            pointer-events: none;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 18px 24px 18px 52px;
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        input[type="text"]::placeholder {
+            color: var(--text-secondary);
+        }
+
+        /* Summary Grid */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-amber));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .summary-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .summary-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 12px 24px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .icon-wrapper {
+            width: 48px;
+            height: 48px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .tag {
+            padding: 6px 12px;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-blue);
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .summary-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .summary-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Topics List */
+        .topics-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .topic-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .topic-card.expanded {
+            border-color: var(--accent-blue);
+            box-shadow: 0 8px 16px var(--shadow);
+        }
+
+        .topic-header {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .topic-header:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .status-dot.changed {
+            background: var(--accent-amber);
+            box-shadow: 0 0 8px var(--accent-amber);
+        }
+
+        .status-dot.maintained {
+            background: var(--accent-green);
+        }
+
+        .topic-title {
+            flex: 1;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .topic-badge {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .topic-badge.changed {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-amber);
+        }
+
+        .topic-badge.maintained {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+        }
+
+        .chevron {
+            transition: transform 0.3s ease;
+            color: var(--text-secondary);
+        }
+
+        .topic-card.expanded .chevron {
+            transform: rotate(90deg);
+            color: var(--accent-blue);
+        }
+
+        .topic-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .topic-card.expanded .topic-content {
+            max-height: 1000px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 0 24px 24px;
+        }
+
+        .version-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .version-box.new {
+            background: rgba(59, 130, 246, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .version-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .version-box.new .version-label {
+            color: var(--accent-blue);
+        }
+
+        .version-ref {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .version-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .version-box.new .version-text {
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 80px;
+            padding: 48px 0;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(59, 130, 246, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--accent-blue);
+            font-size: 24px;
+        }
+
+        footer h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .download-section {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+        }
+
+        .download-btn.primary {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        .download-btn.primary:hover {
+            background: #2563eb;
+            border-color: #2563eb;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .tabs {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Hidden class */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Loading animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .topic-card {
+            animation: fadeIn 0.3s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-info">
+                    <h1>Life 360° Residences</h1>
+                    <p>Estrada do Bananal, 360 • Freguesia • Rio de Janeiro</p>
+                </div>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="summary">📊 Destaques</button>
+                    <button class="tab-btn" data-tab="all">📋 Índice Completo</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-section">
+            <div class="search-wrapper">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Pesquisar por tema (ex: 'Moto', 'Airbnb', 'Obra', 'Câmeras')...">
+            </div>
+        </div>
+
+        <!-- Summary Tab -->
+        <div id="summaryTab" class="tab-content">
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="card-header">
+                        <div class="icon-wrapper">⚡</div>
+                        <span class="tag">Tecnologia</span>
+                    </div>
+                    <h3>Carros Elétricos</h3>
+                    <p>Capítulo 4.5: Novo ponto de carregamento coletivo com regras de uso, rateio de energia e controle individualizado.</p>
+                </div>
+
+                <div class="summary-card">
+                    <div class="card-header">
+                        <div class="icon-wrapper">🏍️</div>
+                        <span class="tag">Vagas</span>
+                    </div>
+                    <h3>Vagas de Moto</h3>
+                    <p>Capítulo 4.4: Criação de 24 vagas precárias numeradas (10 térreo/14 subsolo) com taxa mensal e sorteio anual.</p>
+                </div>
+
+                <div class="summary-card">
+                    <div class="card-header">
+                        <div class="icon-wrapper">📦</div>
+                        <span class="tag">Logística</span>
+                    </div>
+                    <h3>Encomendas 72h</h3>
+                    <p>Capítulo 19: Limite de tamanho (35x35x50cm) e prazo máximo de 72h para retirada na portaria.</p>
+                </div>
+
+                <div class="summary-card">
+                    <div class="card-header">
+                        <div class="icon-wrapper">🏠</div>
+                        <span class="tag">Segurança</span>
+                    </div>
+                    <h3>Airbnb < 180 dias</h3>
+                    <p>Capítulo 23: Proibição expressa de locação por período inferior a 180 dias e plataformas de hospedagem.</p>
+                </div>
+
+                <div class="summary-card">
+                    <div class="card-header">
+                        <div class="icon-wrapper">🔥</div>
+                        <span class="tag">Lazer</span>
+                    </div>
+                    <h3>Forno a Lenha</h3>
+                    <p>Capítulo 10.26: Regulamentação completa de uso, segurança, tipos de lenha e horários permitidos.</p>
+                </div>
+
+                <div class="summary-card">
+                    <div class="card-header">
+                        <div class="icon-wrapper">🐕</div>
+                        <span class="tag">Pets</span>
+                    </div>
+                    <h3>Petplay Oficial</h3>
+                    <p>Capítulo 15: Regras detalhadas do espaço, horários, higiene, raças com focinheira obrigatória e socialização.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- All Topics Tab -->
+        <div id="allTab" class="tab-content hidden">
+            <div class="topics-list" id="topicsList">
+                <!-- Topics will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="info-icon">ℹ️</div>
+                <h3>Atenção Condôminos</h3>
+                <p>
+                    Este comparativo é uma ferramenta de apoio para facilitar a leitura e compreensão das principais mudanças. 
+                    Os detalhes técnicos completos de engenharia (sobrecarga de varandas, especificações estruturais) e padronizações 
+                    estéticas devem ser conferidos nos documentos oficiais para o voto informado na assembleia.
+                </p>
+                <div class="download-section">
+                    <a href="#" class="download-btn">
+                        <span>📄</span>
+                        <div>
+                            <div style="font-size: 11px; opacity: 0.7;">Regimento</div>
+                            <div>Atual (2022)</div>
+                        </div>
+                    </a>
+                    <a href="#" class="download-btn primary">
+                        <span>📄</span>
+                        <div>
+                            <div style="font-size: 11px; opacity: 0.9;">Proposta</div>
+                            <div>Nova (2025)</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Topics data
+        const topics = [
+            {
+                id: 1,
+                titulo: "1. Disposições Gerais",
+                original: "Regras básicas de convivência residencial.",
+                proposta: "Inclui CNPJ, menção explícita à LGPD para dados e imagens, e oficializa os fundos de reserva aprovados em AGEs anteriores.",
+                alteracao: true,
+                refOriginal: "Cap. 1",
+                refProposta: "Cap. 1 (itens 1.16/1.18)"
+            },
+            {
+                id: 2,
+                titulo: "2. Horários",
+                original: "Mudanças e obras: 09h às 17h (Seg-Sex) e 09h às 13h (Sáb).",
+                proposta: "Antecipação para 08h às 17h (Seg-Sex) e extensão até 14h (Sáb). Define 'silêncio absoluto' entre 22h e 07h.",
+                alteracao: true,
+                refOriginal: "Cap. 2 (item 2.1)",
+                refProposta: "Cap. 2 (itens 2.4/2.6)"
+            },
+            {
+                id: 3,
+                titulo: "3. Obras",
+                original: "Obrigação de remoção de entulho e ART básica.",
+                proposta: "Muito mais detalhado: cita NBR 16280 e 5674. Exige seguro de risco contra terceiros para obras elétricas/hidráulicas.",
+                alteracao: true,
+                refOriginal: "Cap. 3 (itens 3.1/3.7)",
+                refProposta: "Cap. 3 (itens 3.6/3.9)"
+            },
+            {
+                id: 4,
+                titulo: "4. Uso das Áreas Comuns",
+                original: "Regras de entrada e circulação.",
+                proposta: "Subdividido em 6 subseções (4.1 a 4.6). Oficializa o Mercadinho (Smart Store) e o uso do CFTV sob as regras da LGPD.",
+                alteracao: true,
+                refOriginal: "Cap. 4",
+                refProposta: "Cap. 4 (itens 4.1.12/4.1.15)"
+            },
+            {
+                id: 5,
+                titulo: "4.4 Vagas Precárias de Moto",
+                original: "Menção genérica a áreas selecionadas pelo Síndico.",
+                proposta: "Criação de 24 vagas numeradas (10 térreo/14 subsolo). Taxa de 5% do salário mínimo e sorteio anual.",
+                alteracao: true,
+                refOriginal: "Item 4.3.21",
+                refProposta: "Cap. 4.4 (itens 4.4.3/4.4.8)"
+            },
+            {
+                id: 6,
+                titulo: "4.5 Carregamento Elétrico",
+                original: "Inexistente.",
+                proposta: "Regra para o ponto coletivo: uso exclusivo de moradores, proibição de extensões e rateio baseado em medidor individual.",
+                alteracao: true,
+                refOriginal: "N/A",
+                refProposta: "Cap. 4.5 (completo)"
+            },
+            {
+                id: 7,
+                titulo: "4.6 Coletores de Lixo",
+                original: "Acondicionamento em sacos plásticos.",
+                proposta: "Regras rígidas para descarte de cortantes (vidro), eletrônicos e proibição de bater tapetes na varanda.",
+                alteracao: true,
+                refOriginal: "Cap. 4.4 (item 4.4.1)",
+                refProposta: "Cap. 4.6 (itens 4.6.5/4.6.8)"
+            },
+            {
+                id: 8,
+                titulo: "5. Piscinas",
+                original: "Exame médico obrigatório para carteirinha.",
+                proposta: "Flexibilização: Exame médico OU Termo de Responsabilidade anual. Oficializa horário de verão até 20h.",
+                alteracao: true,
+                refOriginal: "Cap. 5 (item 5.1)",
+                refProposta: "Cap. 5 (itens 5.1/5.2)"
+            },
+            {
+                id: 9,
+                titulo: "6. Sauna e Hidromassagem",
+                original: "Apenas regras de sauna.",
+                proposta: "Inclui Hidromassagem especificamente: limite de 3 usuários e higienização prévia obrigatória.",
+                alteracao: true,
+                refOriginal: "Cap. 6",
+                refProposta: "Cap. 6 (itens 6.6/6.7)"
+            },
+            {
+                id: 10,
+                titulo: "7. Campo e Quadra de Areia",
+                original: "Uso exclusivo de moradores.",
+                proposta: "Limite de 5 convidados por unidade. Proibição de aulas particulares sem autorização.",
+                alteracao: true,
+                refOriginal: "Cap. 7 (item 7.7)",
+                refProposta: "Cap. 7 (itens 7.6/7.9)"
+            },
+            {
+                id: 11,
+                titulo: "8. Coworking",
+                original: "Chamado de 'Sala de Estudos'.",
+                proposta: "Renomeado. Limite de 20 pessoas e permanência de 2h se houver fila. Permite professores particulares.",
+                alteracao: true,
+                refOriginal: "Cap. 22 (item 22.1)",
+                refProposta: "Cap. 8 (itens 8.8/8.12)"
+            },
+            {
+                id: 12,
+                titulo: "9. Salão de Festas",
+                original: "Reserva entre 07 e 90 dias. Lista de 60 pessoas.",
+                proposta: "Reduz lista para 45 pessoas. Limita 2 reservas/mês por unidade. Som apenas via Bluetooth do salão.",
+                alteracao: true,
+                refOriginal: "Cap. 8 (itens 8.3/8.14)",
+                refProposta: "Cap. 9 (itens 9.4/9.5/9.14)"
+            },
+            {
+                id: 13,
+                titulo: "10. Churrasqueira e Forno",
+                original: "Lista de 25 convidados. Taxa de 10%.",
+                proposta: "Adiciona subseção para o Forno a Lenha. Proíbe decorações alugadas e tendas externas.",
+                alteracao: true,
+                refOriginal: "Cap. 9 (item 9.13)",
+                refProposta: "Cap. 10 (itens 10.9/10.26)"
+            },
+            {
+                id: 14,
+                titulo: "11. Academia",
+                original: "Uso de 24h conforme administração.",
+                proposta: "Horário Interno 05h-22h e Varanda 08h-22h. Termo de saúde substitui atestado obrigatório.",
+                alteracao: true,
+                refOriginal: "Cap. 10 (item 10.3)",
+                refProposta: "Cap. 11 (itens 11.2/11.8)"
+            },
+            {
+                id: 15,
+                titulo: "12. Espaço Teen",
+                original: "Vago.",
+                proposta: "Exclusivo para 11 a 17 anos. Limite de 6 pessoas. Proibido dormir ou pernoitar.",
+                alteracao: true,
+                refOriginal: "Cap. 11",
+                refProposta: "Cap. 12 (completo)"
+            },
+            {
+                id: 16,
+                titulo: "13. Brinquedoteca/Play",
+                original: "Uso até 10 anos.",
+                proposta: "Limite de 6 crianças. Chave controlada pela portaria. Proibido festas particulares no local.",
+                alteracao: true,
+                refOriginal: "Cap. 11/12 (item 11.2)",
+                refProposta: "Cap. 13 (itens 13.4/13.9/13.15)"
+            },
+            {
+                id: 17,
+                titulo: "14. Bike 360",
+                original: "Necessário respeitar normas de uso.",
+                proposta: "Bikes elétricas permitidas apenas SEM a bateria (risco de fogo). Proibido carregar no local.",
+                alteracao: true,
+                refOriginal: "Cap. 13 (item 13.1)",
+                refProposta: "Cap. 14 (itens 14.8/14.11)"
+            },
+            {
+                id: 18,
+                titulo: "15. Animais e Petplay",
+                original: "Permitido se não incomodarem.",
+                proposta: "Regras detalhadas do Petplay. Obrigatoriedade de focinheira para raças específicas da Lei Estadual.",
+                alteracao: true,
+                refOriginal: "Cap. 19",
+                refProposta: "Cap. 15 (item 15.10)"
+            },
+            {
+                id: 19,
+                titulo: "16. Espaço Carwash",
+                original: "Uso de até 1 hora.",
+                proposta: "Prioridade absoluta para lavagem sobre manutenção. Descarte de óleos conforme norma ambiental.",
+                alteracao: true,
+                refOriginal: "Cap. 21 (item 21.3)",
+                refProposta: "Cap. 16 (itens 16.3/16.7)"
+            },
+            {
+                id: 20,
+                titulo: "17. Redário e Piquenique",
+                original: "Inexistente.",
+                proposta: "Uso das 08h às 22h. Redes fornecidas pela zeladoria. Proibido álcool ou fumar no local.",
+                alteracao: true,
+                refOriginal: "N/A",
+                refProposta: "Cap. 17 (completo)"
+            },
+            {
+                id: 21,
+                titulo: "18. Sala de Ferramentas",
+                original: "Empréstimo por 24h.",
+                proposta: "Sessões de 1h30 no local. Proibido recarga de baterias de lítio por risco de explosão.",
+                alteracao: true,
+                refOriginal: "Cap. 23 (item 23.1)",
+                refProposta: "Cap. 18 (itens 18.4/18.9)"
+            },
+            {
+                id: 22,
+                titulo: "19. Encomendas",
+                original: "Registro na portaria.",
+                proposta: "Dimensões máx: 35x35x50cm. Não recebe perecíveis. Retirada em 72h sob pena de multa.",
+                alteracao: true,
+                refOriginal: "Cap. 20",
+                refProposta: "Cap. 19 (itens 19.14/19.15)"
+            },
+            {
+                id: 23,
+                titulo: "20. Padrão Estético",
+                original: "Proibido mudar fachada.",
+                proposta: "Padrão de telhados de coberturas, cortina de vidro, redes pretas e lâmpadas LED âmbar/amarelas.",
+                alteracao: true,
+                refOriginal: "Item 16.2.12",
+                refProposta: "Cap. 20 (itens 20.8/20.12)"
+            },
+            {
+                id: 24,
+                titulo: "21. Segurança",
+                original: "Uso de CFTV em pontos estratégicos.",
+                proposta: "Obrigatoriedade de luz interna do carro acesa e retirada de capacete de moto ao entrar.",
+                alteracao: true,
+                refOriginal: "Cap. 15",
+                refProposta: "Cap. 21 (item 21.2.4)"
+            },
+            {
+                id: 25,
+                titulo: "24. Penalidades",
+                original: "Multa de 25% do salário mínimo federal.",
+                proposta: "Multas baseadas em multiplicadores da 'Cota Ordinária'. Até 10x para conduta antissocial.",
+                alteracao: true,
+                refOriginal: "Item 16.2.15",
+                refProposta: "Cap. 24 (item 24.4)"
+            }
+        ];
+
+        // Render topics
+        function renderTopics(filteredTopics = topics) {
+            const topicsList = document.getElementById('topicsList');
+            topicsList.innerHTML = '';
+
+            filteredTopics.forEach(topic => {
+                const topicCard = document.createElement('div');
+                topicCard.className = 'topic-card';
+                
+                const statusClass = topic.alteracao ? 'changed' : 'maintained';
+                const statusText = topic.alteracao ? 'Alterado / Detalhado' : 'Mantido';
+
+                topicCard.innerHTML = `
+                    <div class="topic-header">
+                        <div class="status-dot ${statusClass}"></div>
+                        <div class="topic-title">${topic.titulo}</div>
+                        <span class="topic-badge ${statusClass}">${statusText}</span>
+                        <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15l5-5-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="topic-content">
+                        <div class="comparison-grid">
+                            <div class="version-box">
+                                <div class="version-label">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <circle cx="6" cy="6" r="6" fill="currentColor" opacity="0.2"/>
+                                    </svg>
+                                    Regimento 2022
+                                </div>
+                                <div class="version-ref">${topic.refOriginal}</div>
+                                <div class="version-text">${topic.original}</div>
+                            </div>
+                            <div class="version-box new">
+                                <div class="version-label">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                    Sugestão 2025
+                                </div>
+                                <div class="version-ref">${topic.refProposta}</div>
+                                <div class="version-text">${topic.proposta}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                topicCard.querySelector('.topic-header').addEventListener('click', () => {
+                    topicCard.classList.toggle('expanded');
+                });
+
+                topicsList.appendChild(topicCard);
+            });
+        }
+
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                
+                // Update active button
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Show/hide content
+                if (tab === 'summary') {
+                    document.getElementById('summaryTab').classList.remove('hidden');
+                    document.getElementById('allTab').classList.add('hidden');
+                } else {
+                    document.getElementById('summaryTab').classList.add('hidden');
+                    document.getElementById('allTab').classList.remove('hidden');
+                }
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filtered = topics.filter(topic => 
+                topic.titulo.toLowerCase().includes(searchTerm) ||
+                topic.proposta.toLowerCase().includes(searchTerm) ||
+                topic.original.toLowerCase().includes(searchTerm)
+            );
+            renderTopics(filtered);
+        });
+
+        // Initial render
+        renderTopics();
+    </script>
+</body>
+</html>
