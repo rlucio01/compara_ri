@@ -563,6 +563,20 @@
             border-color: #2563eb;
         }
 
+        .suggestions-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+            background: #2563eb;
+        }
+
+        [data-theme="light"] .suggestions-btn {
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+
+        [data-theme="light"] .suggestions-btn:hover {
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
@@ -725,6 +739,31 @@
             </div>
         </div>
     </main>
+
+    <section class="suggestions-section" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 0; margin-top: 80px;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <div style="width: 56px; height: 56px; background: linear-gradient(135deg, var(--accent-blue), var(--accent-amber)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 28px;">
+                    💡
+                </div>
+                <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; margin-bottom: 16px; color: var(--text-primary);">
+                    Envie suas Sugestões
+                </h2>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 32px; font-size: 16px;">
+                    Sua opinião é fundamental! Compartilhe suas sugestões, dúvidas ou comentários sobre a proposta do novo regulamento através do formulário oficial da administração.
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScuZcWEtgOFm9l1VKDPRDNOd1PwBlTb9ub02jLt29z_EsXKaQ/viewform" target="_blank" rel="noopener noreferrer" class="suggestions-btn" style="display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px; background: var(--accent-blue); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" fill="currentColor"/>
+                    </svg>
+                    Acessar Formulário de Sugestões
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
