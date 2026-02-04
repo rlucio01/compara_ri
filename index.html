@@ -633,6 +633,226 @@
         .topic-card {
             animation: fadeIn 0.3s ease-out;
         }
+
+        /* Suggestions styles */
+        .suggestions-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .suggestion-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        [data-theme="light"] .suggestion-category {
+            box-shadow: 0 1px 3px var(--shadow);
+        }
+
+        .category-header {
+            padding: 20px 24px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+
+        .category-header:hover {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.15));
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text-primary);
+        }
+
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .category-count {
+            background: rgba(139, 92, 246, 0.15);
+            color: #8b5cf6;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .suggestion-category.expanded .category-content {
+            max-height: 5000px;
+        }
+
+        .suggestion-category.expanded .chevron {
+            transform: rotate(90deg);
+            color: #8b5cf6;
+        }
+
+        .suggestion-item {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+
+        .suggestion-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .suggestion-type {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .type-alteracao { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+        .type-inclusao { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+        .type-supressao { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+        .type-clareza { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+        .type-legalidade { background: rgba(139, 92, 246, 0.15); color: #8b5cf6; }
+
+        .suggestion-ref {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .suggestion-text {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .general-points {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.05));
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .general-points h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .general-points ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .general-points li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .general-points li:last-child {
+            border-bottom: none;
+        }
+
+        .general-points li::before {
+            content: "▪";
+            color: #8b5cf6;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: 8px;
+        }
+
+        /* Legend styles */
+        .legend-box {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 32px;
+        }
+
+        [data-theme="light"] .legend-box {
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .legend-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="light"] .legend-item {
+            background: var(--bg-primary);
+        }
+
+        .legend-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .legend-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .legend-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -657,6 +877,7 @@
                     <div class="tabs">
                         <button class="tab-btn active" data-tab="summary">📊 Destaques</button>
                         <button class="tab-btn" data-tab="all">📋 Índice Completo</button>
+                        <button class="tab-btn" data-tab="suggestions">💬 Sugestões</button>
                     </div>
                 </div>
             </div>
@@ -682,7 +903,7 @@
                         <span class="tag">Comparativo</span>
                     </div>
                     <h3>Extensão dos Documentos</h3>
-                    <p>Regimento 2022: <strong>43 páginas</strong> | Proposta 2025: <strong>81 páginas</strong>. Aumento significativo em detalhamento e clareza das normas.</p>
+                    <p>Regimento 2022: <strong>43 páginas</strong> | Proposta 2025: <strong>81 páginas</strong>.</p>
                 </div>
 
                 <div class="summary-card">
@@ -747,6 +968,57 @@
                 <!-- Topics will be inserted here by JavaScript -->
             </div>
         </div>
+
+        <!-- Suggestions Tab -->
+        <div id="suggestionsTab" class="tab-content hidden">
+            <div style="max-width: 900px; margin: 0 auto 32px; text-align: center;">
+                <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #8b5cf6, #ec4899); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px;">
+                    💬
+                </div>
+                <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; margin-bottom: 12px; color: var(--text-primary);">
+                    Sugestões dos Moradores
+                </h2>
+                <p style="color: var(--text-secondary); line-height: 1.8; font-size: 16px; margin-bottom: 32px;">
+                    Compilação de anotações e sugestões apresentadas por condôminos para aprimoramento do Regimento Interno.
+                </p>
+
+                <!-- Legend -->
+                <div class="legend-box">
+                    <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--text-primary); display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M9 5h2v2H9V5zm0 4h2v6H9V9zm1-9C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor" opacity="0.6"/>
+                        </svg>
+                        Legenda de Categorização
+                    </h3>
+                    <div class="legend-grid">
+                        <div class="legend-item">
+                            <span class="suggestion-type type-alteracao">ALTERAÇÃO</span>
+                            <span class="legend-desc">Mudanças propostas</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="suggestion-type type-inclusao">INCLUSÃO</span>
+                            <span class="legend-desc">Novos itens a adicionar</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="suggestion-type type-supressao">SUPRESSÃO</span>
+                            <span class="legend-desc">Itens a remover</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="suggestion-type type-clareza">CLAREZA</span>
+                            <span class="legend-desc">Pontos que precisam esclarecimento</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="suggestion-type type-legalidade">LEGALIDADE</span>
+                            <span class="legend-desc">Questões de fundamentação legal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="suggestions-container" id="suggestionsContainer">
+                <!-- Suggestions will be inserted here by JavaScript -->
+            </div>
+        </div>
     </main>
 
     <section class="suggestions-section" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 0; margin-top: 80px;">
@@ -761,7 +1033,7 @@
                 <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 32px; font-size: 16px;">
                     Sua opinião é fundamental! Compartilhe suas sugestões, dúvidas ou comentários sobre a proposta do novo regulamento através do formulário oficial da administração.
                 </p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScuZcWEtgOFm9l1VKDPRDNOd1PwBlTb9ub02jLt29z_EsXKaQ/viewform" target="_blank" rel="noopener noreferrer" class="suggestions-btn" style="display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px; background: var(--accent-blue); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">
+                <a href="https://forms.gle/itgD6XSLLHUyhD1Z7" target="_blank" rel="noopener noreferrer" class="suggestions-btn" style="display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px; background: var(--accent-blue); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" fill="currentColor"/>
                     </svg>
@@ -1115,12 +1387,16 @@
                 btn.classList.add('active');
 
                 // Show/hide content
+                document.getElementById('summaryTab').classList.add('hidden');
+                document.getElementById('allTab').classList.add('hidden');
+                document.getElementById('suggestionsTab').classList.add('hidden');
+                
                 if (tab === 'summary') {
                     document.getElementById('summaryTab').classList.remove('hidden');
-                    document.getElementById('allTab').classList.add('hidden');
-                } else {
-                    document.getElementById('summaryTab').classList.add('hidden');
+                } else if (tab === 'all') {
                     document.getElementById('allTab').classList.remove('hidden');
+                } else if (tab === 'suggestions') {
+                    document.getElementById('suggestionsTab').classList.remove('hidden');
                 }
             });
         });
@@ -1139,6 +1415,230 @@
 
         // Initial render
         renderTopics();
+
+        // Suggestions data
+        const generalPoints = [
+            "Incoerências de idade – o Regimento ora estabelece uma idade, ora outra, para utilização dos mesmos espaços. É necessário unificar critérios e fundamentar legalmente cada limite etário.",
+            "Informação sobre legalização – alguns tópicos indicam leis específicas, enquanto outros não. É indispensável unidade e coerência com indicação clara das leis aplicáveis.",
+            "Não deve haver segregação de espaços por faixa etária. O Regimento deve orientar formas de convívio e uso consciente, não proibir que moradores usufruam das áreas comuns.",
+            "Substituir o uso excessivo de 'obrigatório' por 'sugerido' e 'proibido' por 'recomendado', evitando excesso de imposições.",
+            "A identificação das leis cabíveis para cada determinação é fundamental para clareza e segurança jurídica do documento."
+        ];
+
+        const suggestionsData = [
+            {
+                category: "Cap. 1 - Disposições Gerais",
+                icon: "📋",
+                items: [
+                    { ref: "Inclusão", type: "inclusao", text: "Criar o Conselho Consultivo para mediação, orientação e apoio à gestão, fortalecendo a governança. O Conselho Fiscal deve restringir-se à análise de contas e tributos." },
+                    { ref: "1.4", type: "legalidade", text: "Há respaldo jurídico para aprovação deste dispositivo? O que prevê a Convenção? O condomínio só pode proibir práticas com previsão expressa na Convenção ou aprovação em assembleia." },
+                    { ref: "1.6", type: "alteracao", text: "Reduzir prazo de resposta da administração de 15 dias úteis para 5 dias úteis, tornando o procedimento mais eficiente." },
+                    { ref: "1.7", type: "supressao", text: "Cancelar o dispositivo. O Síndico não deve editar normas por circular sem prévia deliberação em assembleia." },
+                    { ref: "1.13", type: "clareza", text: "Definir objetivamente os meios oficiais de comunicação (e-mail, app, mural). Alterações devem ser amplamente divulgadas." },
+                    { ref: "1.15", type: "clareza", text: "O termo 'conduta antissocial' é subjetivo. Necessário indicar exemplos claros e objetivos, além de justificar a classificação da gravidade." },
+                    { ref: "1.16", type: "legalidade", text: "Verificar se o condomínio está cumprindo a LGPD. O morador deve ter acesso às imagens relacionadas à infração. Atenção à exposição indevida de dados pessoais." }
+                ]
+            },
+            {
+                category: "Cap. 2 - Horários e Convivência",
+                icon: "🕐",
+                items: [
+                    { ref: "2.2", type: "clareza", text: "O texto restringe jogos exclusivamente a crianças. O lazer deve ser regulado pela atividade e nível de ruído, não pela faixa etária. Cria segregação injustificada." },
+                    { ref: "2.4", type: "alteracao", text: "Estender horário de término das atividades para 18h, adequando à rotina dos moradores." },
+                    { ref: "2.6", type: "legalidade", text: "O texto sugere vedação ampla de atividades. A lei limita ruídos, não comunicação. Incluir ressalva expressa para emergências (incêndio, saúde)." },
+                    { ref: "2.8", type: "clareza", text: "O texto limita uso até 22h, enquanto salão de festas funciona até 23h59. Necessário alinhar os horários ou justificar tecnicamente a diferença." }
+                ]
+            },
+            {
+                category: "Cap. 3 - Obras e Manutenção",
+                icon: "🔨",
+                items: [
+                    { ref: "3.1", type: "clareza", text: "Incluir exceção expressa para reparos emergenciais (vazamentos, problemas elétricos) inclusive aos domingos e feriados, quando houver risco." },
+                    { ref: "3.4", type: "legalidade", text: "O Síndico não pode autorizar obras sem responsabilidade técnica (NBR 16.280/2014). O texto deve deixar claro que autorização administrativa não substitui ART ou RRT." },
+                    { ref: "3.9", type: "clareza", text: "Incluir expressamente '...instalações elétricas, hidráulicas, demolições ou quaisquer intervenções...', evitando interpretações restritivas." }
+                ]
+            },
+            {
+                category: "Cap. 4 - Uso das Áreas Comuns",
+                icon: "🏢",
+                items: [
+                    { ref: "4.1.5", type: "legalidade", text: "A idade deve observar o ECA. Regras sobre brincadeiras perigosas, gritos ou depredação devem aplicar-se a todos, não só crianças." },
+                    { ref: "4.1.8-e", type: "clareza", text: "Esclarecer o que se entende por 'aglomerações indevidas' e 'comportamentos inadequados' - termos vagos." },
+                    { ref: "4.1.8-f", type: "clareza", text: "Não há justificativa para vedar que crianças/adolescentes circulem sem camisa no verão ou que alguém transite descalço em áreas de lazer." },
+                    { ref: "4.1.11", type: "clareza", text: "Carregadores elétricos não constam no memorial descritivo. Esclarecer custos ao condomínio e por que um benefício gera custo ao morador." },
+                    { ref: "4.2.2", type: "clareza", text: "Proibir permanência, conversas prolongadas ou lanches é excessivamente invasivo. O texto deve ser orientativo, não cerceando direitos." },
+                    { ref: "4.2.18", type: "legalidade", text: "Indicar a lei que estabelece idade mínima de 10 anos. Na ausência, adequar à legislação vigente." },
+                    { ref: "4.3.2", type: "alteracao", text: "Incluir possibilidade de estacionamento de bicicletas elétricas, realidade cada vez mais comum." },
+                    { ref: "4.4.3", type: "legalidade", text: "Não houve assembleia específica para vagas, embora a Convenção exija deliberação. Avaliar respaldo jurídico." },
+                    { ref: "4.4.8", type: "alteracao", text: "Aumentar percentual para 10%, considerando que é fonte de arrecadação e benefício a quem possui mais de um veículo." }
+                ]
+            },
+            {
+                category: "Cap. 5 - Piscinas",
+                icon: "🏊",
+                items: [
+                    { ref: "5.1", type: "clareza", text: "Incluir que convidados também devem apresentar atestado ou termo de responsabilidade." },
+                    { ref: "5.9", type: "clareza", text: "Substituir 'exclusivo' por 'preferencial' e retirar vedação ao uso por adultos." },
+                    { ref: "5.10", type: "legalidade", text: "Indicar a lei que estabelece idade mínima de 10 anos ou adequar conforme legislação vigente." },
+                    { ref: "5.16/5.17", type: "alteracao", text: "Avaliar a proibição de alimentos que não comprometem a salubridade do espaço." }
+                ]
+            },
+            {
+                category: "Cap. 6-7 - Sauna / Campo e Quadra",
+                icon: "🏃",
+                items: [
+                    { ref: "6.4", type: "legalidade", text: "Corrigir idade mínima para 12 anos ou indicar a lei que exige 14 anos." },
+                    { ref: "7.1", type: "legalidade", text: "Corrigir idade mínima para 10 anos ou indicar lei que exige 12 anos." },
+                    { ref: "7.3", type: "clareza", text: "Substituir 'de qualquer natureza' por 'acima do limite da legislação vigente'." }
+                ]
+            },
+            {
+                category: "Cap. 8 - Coworking",
+                icon: "💼",
+                items: [
+                    { ref: "8.1/8.12", type: "clareza", text: "Há conflito entre uso exclusivo por condôminos e permissão para professores." },
+                    { ref: "8.8", type: "legalidade", text: "Justificar idade mínima de 14 anos ou adequar a 12 anos." },
+                    { ref: "8.14", type: "clareza", text: "Eventos institucionais do condomínio ficariam inviabilizados. O texto precisa ser revisto." }
+                ]
+            },
+            {
+                category: "Cap. 9 - Salão de Festas",
+                icon: "🎉",
+                items: [
+                    { ref: "9.2", type: "legalidade", text: "Música ambiente deve ser permitida até 23h59, respeitando limites legais." },
+                    { ref: "9.5", type: "alteracao", text: "Manter ocupação de 60 pessoas e prever assentos conforme capacidade." },
+                    { ref: "9.8", type: "alteracao", text: "Prever ganchos para fixação de painéis." },
+                    { ref: "9.14", type: "alteracao", text: "Rever proibição de bandas e música ao vivo." },
+                    { ref: "9.22", type: "clareza", text: "Prever sorteio para datas festivas." }
+                ]
+            },
+            {
+                category: "Cap. 10 - Churrasqueira e Forno",
+                icon: "🍖",
+                items: [
+                    { ref: "10.2", type: "alteracao", text: "Corrigir horário inicial para 8h." },
+                    { ref: "10.9", type: "supressao", text: "Remover o dispositivo sobre decorações." },
+                    { ref: "10.18", type: "legalidade", text: "Permitir uso de som próprio respeitando limites legais." },
+                    { ref: "10.24", type: "clareza", text: "Prever sorteio para uso do espaço em datas festivas." }
+                ]
+            },
+            {
+                category: "Cap. 11 - Academia (Espaço Fitness)",
+                icon: "💪",
+                items: [
+                    { ref: "Nomenclatura", type: "alteracao", text: "Manter 'Espaço Fitness' conforme denominação já adotada pelo condomínio, em substituição a 'Academia'." },
+                    { ref: "11.2", type: "alteracao", text: "Manter funcionamento 24h conforme regra anterior. Viabilidade de piso emborrachado reduz ruídos. Não há fundamento para restrição de horário." },
+                    { ref: "11.3", type: "legalidade", text: "Restrição etária absoluta é inadequada. Crianças/adolescentes com recomendação médica devem poder usar. Até 14 anos com responsável; 14-18 anos com autorização formal." },
+                    { ref: "11.4", type: "clareza", text: "Regra de ocupação deve diferenciar área interna e externa, com critérios objetivos relacionados a ruído e convivência." },
+                    { ref: "11.11-c", type: "clareza", text: "Vedação genérica ao uso descalço é inadequada. Algumas atividades (musculação, alongamento) podem exigir pés descalços em ambiente apropriado." },
+                    { ref: "Inclusão", type: "inclusao", text: "Adicionar regras de organização de equipamentos, uso do mosquetão, higienização após uso, e responsabilização por danos causados por má utilização." }
+                ]
+            },
+            {
+                category: "Cap. 12 - Espaço Teen (Sala de Jogos)",
+                icon: "🎮",
+                items: [
+                    { ref: "Nomenclatura", type: "alteracao", text: "Alterar 'Sala Teen' para 'Sala de Jogos' para evitar segregação por faixa etária." },
+                    { ref: "12.1", type: "clareza", text: "Idade mínima é incoerente com outros ambientes. Convivência pode ser mediada por responsável. Proibição rígida por idade é desproporcional." },
+                    { ref: "12.9", type: "alteracao", text: "Limitação de usuários deve observar critérios técnicos e legais. Limites rígidos geram conflitos. Recomendar uso consciente, não restrição excessiva." }
+                ]
+            },
+            {
+                category: "Cap. 13 - Brinquedoteca e Playground",
+                icon: "🎨",
+                items: [
+                    { ref: "13.2", type: "alteracao", text: "Substituir 'obrigatório' por 'sugerido', reduzindo caráter impositivo e priorizando orientação." },
+                    { ref: "13.4", type: "clareza", text: "Ocupação deve observar limites legais, diferenciando área interna e externa. Indicar quantidade recomendada, não limite impositivo." },
+                    { ref: "13.7", type: "clareza", text: "Não deve haver idade máxima por restrição indevida. Critério deve ser 'uso preferencial'." }
+                ]
+            },
+            {
+                category: "Cap. 14-15 - Bicicletário / Petplay",
+                icon: "🚴",
+                items: [
+                    { ref: "14.4", type: "alteracao", text: "Retirar limitação de uma vaga por unidade - limitação indevida ao uso do bicicletário." },
+                    { ref: "14.13", type: "clareza", text: "Esclarecer como será realizado teste de verificação da bicicleta. Permitir uso da área de estacionamento." },
+                    { ref: "15.10-c", type: "inclusao", text: "Incluir que, mesmo dentro do Pet Play, é obrigatório uso de focinheira quando aplicável conforme lei." }
+                ]
+            },
+            {
+                category: "Cap. 17 - Redário e Piquenique",
+                icon: "🌳",
+                items: [
+                    { ref: "17.1", type: "clareza", text: "Local denominado 'espaço piquenique' deve contemplar atividades compatíveis, inclusive consumo de alimentos." },
+                    { ref: "17.5", type: "supressao", text: "Eliminar item sobre 'aglomeração' - termo subjetivo. Espaço comporta 15-20 pessoas sem prejuízo." },
+                    { ref: "17.11", type: "clareza", text: "Não é razoável limitar uso das redes até 19h se espaço funciona até 22h." },
+                    { ref: "17.13", type: "legalidade", text: "Não há justificativa para restringir uso de som abaixo do limite legal de decibéis." },
+                    { ref: "17.14", type: "alteracao", text: "Não proibir decoração para confraternizações entre moradores, desde que respeitadas as regras." }
+                ]
+            },
+            {
+                category: "Cap. 20 - Padrão Estético",
+                icon: "🎨",
+                items: [
+                    { ref: "20.3", type: "alteracao", text: "Permitir instalação de varal de roupas abaixo do limite do guarda-corpo - não interfere na fachada." },
+                    { ref: "20.13", type: "inclusao", text: "Proibir câmeras tipo dome - impossibilitam identificar visualmente a direção para qual apontam." }
+                ]
+            }
+        ];
+
+        // Render suggestions
+        function renderSuggestions() {
+            const container = document.getElementById('suggestionsContainer');
+            
+            // Add general points
+            const generalPointsHTML = `
+                <div class="general-points">
+                    <h3>⚠️ Pontos Gerais</h3>
+                    <ul>
+                        ${generalPoints.map(point => `<li>${point}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            
+            container.innerHTML = generalPointsHTML;
+            
+            // Add categories
+            suggestionsData.forEach(category => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'suggestion-category';
+                
+                categoryDiv.innerHTML = `
+                    <div class="category-header">
+                        <div class="category-title">
+                            <div class="category-icon">${category.icon}</div>
+                            <span>${category.category}</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span class="category-count">${category.items.length} sugestões</span>
+                            <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15l5-5-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="category-content">
+                        ${category.items.map(item => `
+                            <div class="suggestion-item">
+                                <div class="suggestion-header">
+                                    <span class="suggestion-type type-${item.type}">${item.type}</span>
+                                    <span class="suggestion-ref">${item.ref}</span>
+                                </div>
+                                <div class="suggestion-text">${item.text}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                
+                categoryDiv.querySelector('.category-header').addEventListener('click', () => {
+                    categoryDiv.classList.toggle('expanded');
+                });
+                
+                container.appendChild(categoryDiv);
+            });
+        }
+
+        // Initialize suggestions
+        renderSuggestions();
     </script>
 </body>
 </html>
