@@ -654,7 +654,7 @@
 
         .category-header {
             padding: 20px 24px;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+            background: rgba(59, 130, 246, 0.08);
             border-bottom: 1px solid var(--border);
             cursor: pointer;
             display: flex;
@@ -664,7 +664,7 @@
         }
 
         .category-header:hover {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.15));
+            background: rgba(59, 130, 246, 0.12);
         }
 
         .category-title {
@@ -680,7 +680,7 @@
         .category-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            background: var(--accent-blue);
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -689,8 +689,8 @@
         }
 
         .category-count {
-            background: rgba(139, 92, 246, 0.15);
-            color: #8b5cf6;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-blue);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 12px;
@@ -709,7 +709,7 @@
 
         .suggestion-category.expanded .chevron {
             transform: rotate(90deg);
-            color: #8b5cf6;
+            color: var(--accent-blue);
         }
 
         .suggestion-item {
@@ -765,7 +765,7 @@
         }
 
         .copy-category-btn {
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            background: var(--accent-blue);
             border: none;
             border-radius: 10px;
             padding: 8px 16px;
@@ -782,7 +782,8 @@
 
         .copy-category-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+            background: #2563eb;
         }
 
         .copy-category-btn.copied {
@@ -829,8 +830,8 @@
         }
 
         .general-points {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.05));
-            border: 2px solid rgba(139, 92, 246, 0.2);
+            background: rgba(59, 130, 246, 0.05);
+            border: 2px solid rgba(59, 130, 246, 0.2);
             border-radius: 16px;
             padding: 24px;
             margin-bottom: 24px;
@@ -866,7 +867,7 @@
 
         .general-points li::before {
             content: "▪";
-            color: #8b5cf6;
+            color: var(--accent-blue);
             font-weight: bold;
             display: inline-block;
             width: 1em;
@@ -1043,7 +1044,7 @@
         <!-- Suggestions Tab -->
         <div id="suggestionsTab" class="tab-content hidden">
             <div style="max-width: 900px; margin: 0 auto 32px; text-align: center;">
-                <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #8b5cf6, #ec4899); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px;">
+                <div style="width: 64px; height: 64px; background: var(--accent-blue); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px;">
                     💬
                 </div>
                 <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; margin-bottom: 12px; color: var(--text-primary);">
